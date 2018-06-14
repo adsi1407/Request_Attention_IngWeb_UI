@@ -1,0 +1,14 @@
+<h3>{{title}}</h3>
+<hr/>
+
+<form #formrequeststate= "ngForm"  class="col-lg-6" id= "formrequeststate">
+    <label>Nombre</label>
+    <input type= "text" #nombre="ngModel" name= "nombre"
+    [(ngModel)]= "requeststate.firstName" class="form-control" required>
+    <span *ngIf = "!firstName.valid && firstName.touched" class="label label-success">
+        Debe ingresar el nombre</span>
+
+    <br>
+
+    <input type="submit" value="{{title}}"  [disabled]= "!formrequeststate.form.valid" class="btn btn-success">
+</form>
